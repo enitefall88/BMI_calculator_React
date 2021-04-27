@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div>
+
+  </div>
+  }
+
+function calculate_BMI(height, weight) {
+  let bmi = 0
+  return bmi = weight / (height/100) ** 2
 }
+
+function tell_BMI(bmi) {
+    return bmi <= 18.5 ? "Underweight"   :
+         bmi <= 24.9 ? "Normal Weight" :
+         bmi <= 29.9 ? "Overweight"    :
+                       "Obese"
+}
+
+function tell_BMI_color(bmi) {
+  return bmi <= 18.5 ? "warning" :
+         bmi <= 24.9 ? "success" :
+         bmi <= 29.9 ? "warning" :
+                       "danger"
+}
+
+console.log(calculate_BMI(165,76))
 
 export default App;
