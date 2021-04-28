@@ -35,6 +35,10 @@ function App() {
 let [weight, setWeight] = useState(46)
 let [height, setHeight] = useState(175)
 
+let bmi = calculate_BMI(height, weight)
+let bmiDescription = tell_BMI(bmi)
+let bmiColor = tell_BMI_color(bmi)
+
   return <div>
     <Slider minValue={140} maxValue={200}
     currentValue={height} onChange={setHeight} title="Height">
@@ -44,9 +48,9 @@ let [height, setHeight] = useState(175)
     currentValue={weight} onChange={setWeight} title="Weight">
     Weight
     </Slider>
-    <div><h4>BMI {calculate_BMI(height, weight).toFixed(2)}</h4> </div>
-    <span className={`badge-${tell_BMI_color(calculate_BMI(height, weight))}`}>
-      {tell_BMI(calculate_BMI(height, weight))}
+    <div><h4>BMI {bmi.toFixed(2)}</h4> </div>
+    <span className={`badge-${bmiColor}`}>
+      {bmiDescription}
     </span>
   </div>
 }
