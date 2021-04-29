@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import PT from "prop-types"
 
 function calculate_BMI(height, weight) {
   let bmi = 0
@@ -29,6 +30,14 @@ function Slider({minValue, maxValue, currentValue, onChange, title}) {
     </label>
     {currentValue}
   </div>
+}
+
+Slider.propTypes = {
+  minValue: PT.number.isRequired,
+  maxValue: PT.number.isRequired,
+  currentValue: PT.number.isRequired,
+  title: PT.string.isRequired,
+  onChange: PT.func.isRequired
 }
 
 function App() {
